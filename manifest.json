@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "NewTab",
+  "version": "1.0.2",
+  "chrome_url_overrides" : {
+    "newtab": "src/homepage.html"
+  },
+  "permissions": [
+    {"fileSystem": ["write", "retainEntries", "directory"]} 
+  ]
+}

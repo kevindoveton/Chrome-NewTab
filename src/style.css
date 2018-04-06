@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+a,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.bg {
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.top.left {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  font-size: 12.5vh;
+  padding: 0;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+h1 {
+  color: #dfdfdf;
+  text-transform: lowercase;
+  margin: 0;
+  padding: 0;
+}
+
+.credits {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
