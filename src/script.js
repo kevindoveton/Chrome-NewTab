@@ -48,21 +48,29 @@ function saveImage(cb) {
   });
 }
 
+function f()  {
+  fetch(getRandomImage())
+  .then(res => res.blob())
+  .then((r) => {
+    console.log(r)
+  })
+}
+
 function findImage(cb) {
   cs.ls('tmp', (arr) => {
     if (arr.length == 0) { return; }
     cs.getFile('tmp/'+arr[0].name, {}, (file) => {
       console.log(arr)
       file.file(function(f) {
-      var reader = new FileReader();
+        var reader = new FileReader();
 
-      reader.onloadend = function(e) {
-        cb((this.result))
-        cs.deleteFile('tmp/'+arr[0].name);
-      };
+        reader.onloadend = function(e) {
+          cb((this.result))
+          cs.deleteFile('tmp/'+arr[0].name);
+        };
 
-      reader.readAsDataURL(f);
-    }, undefined);
+        reader.readAsDataURL(f);
+      }, undefined);
     });
   })
 }
@@ -87,6 +95,18 @@ function main() {
     saveImage();
   });
 
+  // if we're not doing anything, start downloading a new image
+  // let download = true;
+  // setInterval(() => {
+  //   if (download) {
+  //     download = false;
+  //     saveImage(() => {
+  //       download = true;
+  //     });
+  //   }
+  // }, 1000)
+
+  // update the time every second
   setInterval(() => {
     updateTime();
   }, 1000);
